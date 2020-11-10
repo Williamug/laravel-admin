@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Storage;
  */
 class Administrator extends Model implements AuthenticatableContract
 {
-    use Authenticatable, AdminBuilder, HasPermissions;
+    use Authenticatable;
+    use AdminBuilder;
+    use HasPermissions;
 
     protected $fillable = ['username', 'password', 'name', 'avatar'];
 
@@ -63,7 +65,7 @@ class Administrator extends Model implements AuthenticatableContract
      *
      * @return BelongsToMany
      */
-    public function roles() : BelongsToMany
+    public function roles(): BelongsToMany
     {
         $pivotTable = config('admin.database.role_users_table');
 
@@ -77,7 +79,7 @@ class Administrator extends Model implements AuthenticatableContract
      *
      * @return BelongsToMany
      */
-    public function permissions() : BelongsToMany
+    public function permissions(): BelongsToMany
     {
         $pivotTable = config('admin.database.user_permissions_table');
 

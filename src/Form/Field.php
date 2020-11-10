@@ -1014,8 +1014,7 @@ class Field implements Renderable
      *
      * @return $this
      */
-    public function setGroupClass($class)
-    : self
+    public function setGroupClass($class): self
     {
         array_push($this->groupClass, $class);
 
@@ -1027,8 +1026,7 @@ class Field implements Renderable
      *
      * @return array
      */
-    protected function getGroupClass($default = false)
-    : string
+    protected function getGroupClass($default = false): string
     {
         return ($default ? 'form-group ' : '').implode(' ', array_filter($this->groupClass));
     }
@@ -1067,8 +1065,7 @@ class Field implements Renderable
     /**
      * @return string
      */
-    public function getLabelClass()
-    : string
+    public function getLabelClass(): string
     {
         return implode(' ', $this->labelClass);
     }
@@ -1078,8 +1075,7 @@ class Field implements Renderable
      *
      * @return self
      */
-    public function setLabelClass(array $labelClass)
-    : self
+    public function setLabelClass(array $labelClass): self
     {
         $this->labelClass = $labelClass;
 
